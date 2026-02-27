@@ -1,0 +1,427 @@
+/* CSS Complementar para PME IA 
+   ==========================================================================
+   Use este arquivo para sobrescrever o estilo padrão da Garagem.
+   Descomente as linhas abaixo para aplicar suas alterações.
+*/
+
+/* --- EXEMPLOS DE PERSONALIZAÇÃO (VARIÁVEIS) --- */
+/* 
+:root {
+    --garagem-vermelho: #0056b3; 
+    --garagem-preto-tecnico: #1a1a1a; 
+    --tamanho-texto-corpo: 1.1rem; 
+}
+*/
+
+/* --- AJUSTES ESPECÍFICOS DESTE PROJETO --- */
+
+/* Estilo para Dropdown de Navegação */
+.nav-item-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--garagem-preto-tecnico);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    font-family: var(--fonte-corpo);
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--garagem-magenta);
+}
+
+.nav-item-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ajustes de layout específicos */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-check {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-check li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--garagem-cinza-claro, #ccc);
+}
+
+.lista-check li::before {
+    content: "✓";
+    color: var(--garagem-magenta);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Responsividade simples para o menu */
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .titulo-gigante {
+        font-size: 10rem;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link-nav {
+    color: white;
+    text-decoration: none;
+    font-family: var(--fonte-headings, sans-serif);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+    margin-top: 10px;
+}
+
+.link-nav:hover {
+    color: var(--garagem-magenta);
+}
+
+.pt-nav {
+    padding-top: 40px !important;
+    padding-bottom: 40px;
+    border-bottom: solid 1px #ffffff33;
+}
+
+/* Forçar o menu a encostar na direita da tela */
+.pt-nav .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Centralizar títulos principais */
+.titulo-xl {
+    text-align: center;
+}
+
+/* Forçar alinhamento vertical no header resetando margens do logo */
+/* Forçar alinhamento vertical no header resetando margens do logo */
+.logo a {
+    display: block;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    max-height: 60px;
+    width: auto;
+}
+
+/* Espaçamento consistente entre seções */
+#pacotes,
+#solucoes,
+#metodologia,
+#sobre {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Correção de constraste em botões no hover */
+.botao-primario:hover,
+.botao:hover {
+    color: white !important;
+}
+
+/* Botão branco específico (dentro do card de destaque) deve manter texto visível */
+.botao-branco:hover {
+    background-color: #f0f0f0 !important;
+    color: var(--garagem-vermelho) !important;
+}
+
+button,
+.botao {
+    color: white !important;
+}
+
+button,
+.botao:hover {
+    color: white !important;
+}
+
+/* Centralizar títulos dentro dos cards */
+
+.titulo-lg {
+    text-align: center;
+}
+
+/* Ajuste específico do rodapé */
+footer.container {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    text-align: center;
+}
+
+/* Título Gigante Personalizado */
+.titulo-gigante {
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Estilos para Formulários */
+.form-grupo {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--fonte-corpo);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--garagem-magenta);
+}
+
+.form-controlo {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: white;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.form-controlo:focus {
+    outline: none;
+    border-color: var(--garagem-magenta);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+select.form-controlo {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+select.form-controlo option {
+    background-color: var(--garagem-preto-tecnico);
+    color: white;
+}
+
+/* Linha Vertical da Metodologia */
+.metodologia-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.metodologia-timeline::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    /* Começa um pouco abaixo do topo do primeiro card */
+    bottom: 120px;
+    /* Termina antes do final do container */
+    left: 50%;
+    width: 4px;
+    background: var(--garagem-magenta);
+    /* Usando magenta sólido para máxima visibilidade, ou gradiente */
+    background: linear-gradient(to bottom, var(--garagem-magenta), var(--garagem-vermelho));
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 1;
+}
+
+.metodologia-timeline .card {
+    position: relative;
+    z-index: 1;
+    background: var(--garagem-preto-tecnico) !important;
+    /* Garantir fundo opaco para cobrir a linha */
+}
+
+/* Customização para o card Escala em Pacotes */
+.card-escala .lista-check li::before {
+    color: #ffffff !important;
+}
+
+.card-escala .botao-contrario {
+    color: #e03838 !important;
+    background-color: #ffffff !important;
+}
+
+/* ============================================
+   NOVAS SEÇÕES – Estilos adicionais
+   ============================================ */
+
+/* Grid de 5 colunas para Metodologia */
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid-5 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Espaçamento das novas seções */
+#problema,
+#oquefazemos,
+#impacto-ia,
+#diagnostico,
+#faq,
+#cta-final {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Lista de problemas (bullet points com ícone) */
+.lista-problema {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-problema li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--garagem-cinza-claro, #ccc);
+    font-family: var(--fonte-corpo);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.lista-problema li::before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    color: var(--garagem-magenta);
+    font-size: 1.1rem;
+}
+
+/* FAQ Accordion */
+.faq-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    transition: background 0.3s;
+}
+
+.faq-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.faq-item[open] {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--garagem-magenta);
+}
+
+.faq-pergunta {
+    cursor: pointer;
+    padding: 1.2rem 1.5rem;
+    font-family: var(--fonte-headings, sans-serif);
+    font-size: 1.1rem;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.faq-pergunta::-webkit-details-marker {
+    display: none;
+}
+
+.faq-pergunta::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--garagem-magenta);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.faq-item[open] .faq-pergunta::after {
+    content: "−";
+}
+
+.faq-resposta {
+    padding: 0 1.5rem 1.2rem 1.5rem;
+    color: var(--garagem-cinza-claro, #ccc);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* CTA Final – Seção de destaque */
+.secao-cta-final {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.secao-cta-final::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--garagem-magenta), var(--garagem-vermelho));
+}
+
+/* Gap small utility */
+.gap-sm {
+    gap: 0.5rem;
+}
